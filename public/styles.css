@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#status-bar-container {
+    font-family: Roboto Mono, Source Code Pro, Menlo, Courier, monospace;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#status-bar {
+    width: 100%;
+    text-align: center;
+}
+
+#title-bar {
+    display: block;
+    padding: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: px 2px #28292e;
+}
+
+#connection-status {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#motor-status {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #connection-status {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    #motor-status {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}
+
+.status {
+    background-color: #28292e;
+    color: #adafb8;
+    display: inline-block;
+    width: 45%;
+    padding: 15px;
+}
+
+.status.success {
+    background-color: #309600;
+    color: #ffffff;
+}
+
+.status.busy {
+    background-color: #fffb28;
+    color: #ffffff;
+    animation: blink_busy 500ms linear infinite;
+}
+
+.status.error {
+    background-color: #fa462b;
+    color: #ffffff;
+    animation: blink_error 500ms linear infinite;
+}
+
+@keyframes blink_busy {
+    0%{background-color: #fffb28;}
+    50%{background-color: #b5b220;}
+    100%{background-color: #fffb28;}
+}
+
+@keyframes blink_error {
+    0%{background-color: #fa462b;}
+    50%{background-color: #b13522;}
+    100%{background-color: #fa462b;}
+}
